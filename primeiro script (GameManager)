@@ -1,0 +1,15 @@
+public class GameManager : MonoBehaviour
+{
+    public Quiz.Difficulty difficulty;
+    public Quiz.Theme theme;
+
+    public Quiz.Difficulty Difficulty { get => difficulty; }
+    public Quiz.Theme Theme { get => theme; }
+
+    public void GameOver()
+    {
+        Console.WriteLine("Você terminou aqui! Deseja começar novamente?");
+        System.Threading.Tread.Sleep(2000);
+    }
+    
+}
