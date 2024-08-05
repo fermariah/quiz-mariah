@@ -1,0 +1,29 @@
+public class quizmanager : MonoBehaviour
+{
+    #region Singleton
+    public static quizmanager instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+    #endregion
+
+    private int rightAnswers;
+    private Quiz currentQuiz;
+
+    public void CheckAnswer(int answerSelected)
+    {
+        if (answerSelected == currentQuiz.CorrectAnswer)
+        {
+            rightAnswers++;
+        }
+
+        else
+        {
+            GameManager.instance.GameOver();
+        }
+
+        UIManager.instance.HighlightButton(currentQuiz.CorrectAnswer, answerSelected);
+    }
+}
