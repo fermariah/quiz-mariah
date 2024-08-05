@@ -1,0 +1,6 @@
+public class Quiz : MonoBehaviour
+{
+    private int correctAnswer;
+
+    public int CorrectAnswer { get => correctAnswer; }
+}
